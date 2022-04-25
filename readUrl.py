@@ -56,10 +56,10 @@ def Connect():
 
     # except mysql.connector.Error as err:
     #     print("Something went wrong: {}".format(err))
-    except pymssql.InternalError as error:
-        print("Error:" + str(error.args))
-        code, message = error.args
-        print(">>>>>>>>>>>>>", code, message)
+    # except pymssql.InternalError as error:
+    #     print("Error:" + str(error.args))
+    #     code, message = error.args
+    #     print(">>>>>>>>>>>>>", code, message)
     except Exception as e:
         print("Connection failed!")
         print(e)
