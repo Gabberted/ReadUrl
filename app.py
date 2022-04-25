@@ -21,7 +21,7 @@ def hello_world():
     return "Hello World"
 
 @app.route('/testdb')
-def hello_world():
+def testdb():
     print(rdu.connect())
 
 
