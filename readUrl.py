@@ -43,21 +43,10 @@ def echoHTML(strUrl):
     return mystr
 
 def webOpen(url):
-    from selenium import webdriver
-    host = 'selenium'
-    port = '4444'
-    url = host + ':' + port + '/wd/hub'
-
-    desired_capabilities = {
-        'browserName': 'firefox',
-        'javascriptEnabled': True,
-    }
-
-    driver = webdriver.Remote(command_executor = url, desired_capabilities =
-                                                            desired_capabilities)
-    print('Success')
-    driver.quit()
-
+    http = urllib3.PoolManager()
+    url = 'http://webcode.me'
+    resp = http.request('GET', url)
+    print(resp.status)
 
 def main():
     boVerbose=False
