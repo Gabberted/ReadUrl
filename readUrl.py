@@ -90,7 +90,7 @@ def collectHTMLTags(url):
                 strHTMLTag = "<" + strHTMLTag  + ">"                            
                 if strHTMLTag not in lstTags:
                     lstTags.append(strHTMLTag)
-                    print(f"tag: {strHTMLTag}")
+                    #print(f"tag: {strHTMLTag}")
 
     return json.dumps(lstTags)
 
