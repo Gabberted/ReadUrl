@@ -39,7 +39,7 @@ def Connect():
         #conn = mysql.connector.connect(host="192.168.178.62",user="root",password="ijQ84mTO", database="unaux_27270618_slims", port=3306)
 
         #conn = mysql.connector.connect(host="gabberted.unaux.com",user="unaux_27270618",password="#59ceFij4VkyaaE6hKO$", database="unaux_27270618_slims", port=3306)
-        conn = mysql.connector.connect(host='185.41.126.25', user='50747_rakaut', password='t\H7mF|i:7', database='50747_BackSystem', port=9146)
+        #conn = mysql.connector.connect(host='185.41.126.25', user='50747_rakaut', password='t\H7mF|i:7', database='50747_BackSystem', port=9146)
         #conn = mysql.connector.connect(host='localhost', user='slims', password='ijQ84mTO@85400', database='slims', port=3306)
         #conn.autocommit(True)
         #conn = mysql.connector.connect(host='localhost',database='slims',user='slims',password='ijQ84mTO@85400')
@@ -49,6 +49,7 @@ def Connect():
         #conn = pymssql.connect(host='192.168.2.1\slims', user='SLIMS_APPUSR', password='xTzz488slims', database='deflopment', port=1433)
         #conn = pymssql.connect(host='192.168.2.1\slims', user='SLIMS_APPUSR', password='xTzz488slims', database='def', port=1433)
         #conn = pymssql.connect(host='192.168.2.1\slims', user='SLIMS_APPUSR', password='xTzz488slims', database='SLIMS', port=1433)
+        conn = pymssql.connect(host='185.41.126.25', user='50747_rakaut', password='t\H7mF|i:7', database='50747_BackSystem', port=9146)
         print("connection made: Connected")
         cursor=conn.cursor()
         print("db cursor: fetched " + str(cursor))
