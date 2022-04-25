@@ -4,7 +4,8 @@
 
 #import
 import os
-import urllib.request
+import urllib3
+import certifi
 import argparse
 
 
@@ -20,11 +21,15 @@ def echoHTML(strUrl):
     print("init ReadStream")
 
     #fp = urllib.request.urlopen("http://www.python.org")
-    fp = urllib.request.urlopen(strUrl)
-    mybytes = fp.read()
-
-    mystr = mybytes.decode("utf8")
-    fp.close()
+    #fp = urllib.request.urlopen(strUrl)
+    #mybytes = fp.read()
+    http = urllib3.PoolManager(ca_certs=certifi.where())
+    payload = {'name': 'Peter', 'age': 23}
+    url = strUrl
+    req = http.request('GET', url, fields=payload)
+    print(req.data.decode('utf-8'))
+    mystr = req.data.decode("utf8")
+    #fp.close()
     #print(mystr)
     return mystr
 
