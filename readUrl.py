@@ -7,7 +7,7 @@ import os
 import urllib3
 import certifi
 import argparse
-import app as app
+#import app as app
 
 
 
@@ -51,7 +51,7 @@ def webOpen(url):
     print(resp.data.decode('utf-8'))
 
 def runserver():
-    app()
+    return "Not implemented yet!"
   
 def main():
     boVerbose=False
