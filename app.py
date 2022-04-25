@@ -34,7 +34,8 @@ def words(url):
 def collectHTMLTags(url, store=""):
     if store!="":
         strTags = rdu.collectHTMLTags(url)
-        return "STORE !"        
+        rdu.storeHTMLTags(strTags)
+        return "STORED !"        
     else:
         return rdu.collectHTMLTags(url)
 
