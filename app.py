@@ -24,7 +24,7 @@ def hello_world():
 def testdb():
     try:
         cursor, conn = rdu.Connect()        
-        strQ="insert into HTML_Tags(Tag)values('TEST')"
+        strQ="insert into Tags(Tag)values('TEST')"
         cursor.execute(strQ)
         return "Data stored !\n"
     except Exception as e:
