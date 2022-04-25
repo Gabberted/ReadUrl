@@ -23,9 +23,10 @@ def echoHTML(strUrl):
         print("init ReadStream")
 
         http = urllib3.PoolManager(ca_certs=certifi.where())
+        print(f"HTTP pool created: {http}")
         payload = {'scheme':'https', 'auth':'None','name': 'Peter', 'age': 23}
         #payload = {}
-
+        print(f"Payload created {payload}")
         url = strUrl
         req = http.request('GET', url, fields=payload)
         print(req.data.decode('utf-8'))
