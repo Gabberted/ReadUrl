@@ -11,11 +11,12 @@ import argparse
 
 
 #var declarations
-strVersion = "0.0.7"
+strVersion = "0.0.8"
 
 
 #main
 def echoHTML(strUrl):
+    url = strUrl
     mystr=""
     try:    
         os.system('clear')
@@ -26,8 +27,7 @@ def echoHTML(strUrl):
         print(f"HTTP pool created: {http}")
         payload = {'scheme':'https', 'auth':'None','name': 'Peter', 'age': 23}
         #payload = {}
-        print(f"Payload created {payload}")
-        url = strUrl
+        print(f"Payload created {payload}")    
         print(f"Requering {url}")
         try:
             #req = http.request('GET', url, fields=payload)
