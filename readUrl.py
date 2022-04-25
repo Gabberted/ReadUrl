@@ -80,7 +80,7 @@ def storeHTMLTags(strHTMLTags):
     cursor, conn = Connect()
     print(f"Storing Tag: {strHTMLTags}")
     for strHTMLTag in strHTMLTags.split(","):
-        try
+        try:
             print(f"Tag: {strHTMLTag}")
             strQ="insert into Tags(Tag)values('" + strHTMLTag + "')"
             cursor.execute(strQ)
