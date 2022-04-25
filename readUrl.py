@@ -51,7 +51,7 @@ def webOpen(url):
     print(resp.data.decode('utf-8'))
 
 def runserver():
-    myApp = new app()
+    app()
   
 def main():
     boVerbose=False
