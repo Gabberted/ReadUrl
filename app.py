@@ -20,6 +20,16 @@ def hello():
 def hello_world():
     return "Hello World"
 
+@app.route('/testdb')
+def hello_world():
+    print(rdu.connect())
+
+
+
+@app.route('/showall/<tablename>')
+def hello_world():
+    return "Hello World"
+
 
 @app.route('/webopen/<url>')
 def webopen(url):
