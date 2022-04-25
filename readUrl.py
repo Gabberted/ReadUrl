@@ -12,7 +12,7 @@ import json
 #var declarations
 strVersion = "1.0.0"
 strHTMLTags=['\n','<br>','<p>','"','<a','</div>','<strong>','=','text/css','/>']
-strHTMLTags+=['\n','<br','<p','"','<input>','</div','<strong','<input/>','</i>','<i>']
+strHTMLTags+=['href','<span>','</span>','<div','classlimit','</div','<strong','</input>','</i>','<i>']
 
 #main
 def echoHTML(strUrl):
@@ -75,6 +75,14 @@ def get_all_seperate_words(url):
 
 def runserver():
     return "Not implemented yet!"
+
+def collectHTMLTags(url):
+    strHTML= echoHTML(str(url))  
+    foreach strItem in strHTML.split("<"):
+        foreach strHTMLTag in strItem.split(">"):
+            print(f"TAG: {strHTMLTag[0]}")
+
+
   
 def main():
     boVerbose=False
@@ -87,13 +95,15 @@ def main():
     parser.add_argument("-wordUnique"	, "--get_all_Unique_words"	  , help="Gets all the unique words of the page without HTML tags")
     parser.add_argument("--runserver"	, help="Run the server on host port 4452")
     parser.add_argument("-test      "	, "--test"	  , help="Run test")
+    parser.add_argument("-collectHTMLTags "	, "--collectHTMLTags"	  , help="Collect all HTML tags in the url")
     args = parser.parse_args()
     url="HTTPS://" + str(args.url)
     if("HTTP" in str(args.url)):
         url=args.url
     else:
         url="HTTPS://" + str(args.url)
-
+    if args.collectHTMLTags:
+        collectHTMLTags()
     if args.runserver:
         runserver()        
     if args.test:
