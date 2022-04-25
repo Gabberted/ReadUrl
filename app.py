@@ -23,7 +23,7 @@ def hello_world():
 @app.route('/testdb')
 def testdb():
     try:
-        cursor, conn = rdu.Connect())
+        cursor, conn = rdu.Connect()
         return "Database Connected !\n"
      except Exception as e:
         return "Connection failed!"
