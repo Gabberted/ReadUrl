@@ -35,7 +35,7 @@ def testdb():
 def showall(tablename):
     if len(tablename)>0:
         strQ="Select * from " + tablename 
-        cursor, conn =rdu.Collect()
+        cursor, conn =rdu.Connect()
         cursor.execute(strQ)
         rows = cursor.fetchall()
         for row in rows:
