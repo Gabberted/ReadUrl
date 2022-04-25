@@ -11,7 +11,7 @@ import json
 
 #var declarations
 strVersion = "1.0.0"
-
+strHTMLTags=['\n','<br>']
 
 #main
 def echoHTML(strUrl):
@@ -51,10 +51,15 @@ def webOpen(url=""):
     print(resp.data.decode('utf-8'))
     return resp.data.decode('utf-8')
 
-def get_all_seperate_words(url):
+def removeHTMLTags(strHTML):
+    for strTag in strHTMLTags:
+        strHTML=strHTML.replace(strTag,"")
+    return strHTML
 
+def get_all_seperate_words(url):    
     strHTML= echoHTML(str(url))
-    strHTMLsplit=strHTML.split([" ","\n"])
+    strHTML=removeHTMLTags(url)
+    strHTMLsplit=strHTML.split(" ")
     for strItem in strHTMLsplit:
         print(f"item: {strItem}")
     
