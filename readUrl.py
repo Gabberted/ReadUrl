@@ -11,7 +11,7 @@ import argparse
 
 
 #var declarations
-strVersion = "0.0.6"
+strVersion = "0.0.7"
 
 
 #main
@@ -23,7 +23,7 @@ def echoHTML(strUrl):
         print("init ReadStream")
 
         http = urllib3.PoolManager(ca_certs=certifi.where())
-        payload = {'scheme':'https', 'auth':None,'name': 'Peter', 'age': 23}
+        payload = {'scheme':'https', 'auth':'None','name': 'Peter', 'age': 23}
         #payload = {}
 
         url = strUrl
