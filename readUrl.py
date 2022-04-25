@@ -49,6 +49,8 @@ def webOpen(url):
     url = 'http://webcode.me'
     resp = http.request('GET', url)
     print(resp.data.decode('utf-8'))
+    return resp.data.decode('utf-8')
+
 
 def runserver():
     return "Not implemented yet!"
