@@ -24,7 +24,8 @@ def echoHTML(strUrl):
         print("Start System version: " + strVersion)
         print("init ReadStream")
 
-        http = urllib3.PoolManager(ca_certs=certifi.where())
+        #http = urllib3.PoolManager(ca_certs=certifi.where())
+        http = urllib3.PoolManager()
         print(f"HTTP pool created: {http}")
         payload = {'scheme':'https', 'auth':'None','name': 'Peter', 'age': 23}
         #payload = {}

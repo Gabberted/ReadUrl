@@ -25,7 +25,9 @@ def hello_world():
 def webopen(url):
     return rdu.webOpen(url)
 
-
+@app.route('/words/<url>')
+def webopen(url):
+    return rdu.get_all_seperate_words(url)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=4452)
