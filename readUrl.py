@@ -30,7 +30,8 @@ def echoHTML(strUrl):
         url = strUrl
         print(f"Requering {url}")
         try:
-            req = http.request('GET', url, fields=payload)
+            #req = http.request('GET', url, fields=payload)
+            req = http.request('GET', url)
             print(f"Get request {req}")
             print(req.data.decode('utf-8'))
             mystr = req.data.decode("utf8")
