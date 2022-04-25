@@ -24,7 +24,7 @@ def Connect():
         conn = pymssql.connect(host='185.41.126.25', user='Autar3External', password='ijQ84mTO@85400', database='Autar3main', port=9146)
         print("connection made: Connected")
         cursor=conn.cursor()
-        print("db cursor: fetched " + str(cursor))      
+        print(f"db cursor: fetched {cursor}")      
     except Exception as e:
         print(f"Connection failed: {e} " )        
         print("Leaving")    
