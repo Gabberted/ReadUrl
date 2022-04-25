@@ -22,7 +22,7 @@ def hello_world():
 
 
 @app.route('/webopen')
-def hello_world():
+def webopen():
     return rdu.webOpen("")
 
 
