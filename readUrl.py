@@ -58,7 +58,7 @@ def removeHTMLTags(strHTML):
     return strHTML
 
 def storeHTMLTags(strHTMLTags):
-    print(f"Storing Tag: {strHTMLTag}")
+    print(f"Storing Tag: {strHTMLTags}")
     for strHTMLTag in strHTMLTags.split("<"):
         print(f"Tag: {strHTMLTag}")
         
