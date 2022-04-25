@@ -59,7 +59,7 @@ def removeHTMLTags(strHTML):
 def get_all_seperate_words(url):    
     strHTML= echoHTML(str(url))
     strHTML=removeHTMLTags(url)
-    strHTMLsplit=strHTML.split(" ")
+    strHTMLsplit=strHTML.split()
     for strItem in strHTMLsplit:
         print(f"item: {strItem}")
     
