@@ -21,7 +21,7 @@ def hello_world():
     return "Hello World"
 
 
-@app.route('/webopen'/<string>)
+@app.route('/webopen/<url>')
 def webopen(url):
     return rdu.webOpen(url)
 
