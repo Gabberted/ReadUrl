@@ -26,6 +26,7 @@ def testdb():
         cursor, conn = rdu.Connect()        
         strQ="insert into Tags(Tag)values('TEST')"
         cursor.execute(strQ)
+        cursor.commit()
         return "Data stored !\n"
     except Exception as e:
         return "Connection failed!"
