@@ -18,7 +18,7 @@ def hello():
 
 @app.route('/')
 def hello_world():
-    return "Hello World"
+    return "Not implemented"
 
 @app.route('/testdb')
 def testdb():
@@ -27,8 +27,8 @@ def testdb():
 
 
 @app.route('/showall/<tablename>')
-def hello_world():
-    return "Hello World"
+def showall():
+    return "Not implemented"
 
 
 @app.route('/webopen/<url>')
