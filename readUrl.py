@@ -23,8 +23,8 @@ def echoHTML(strUrl):
         print("init ReadStream")
 
         http = urllib3.PoolManager(ca_certs=certifi.where())
-        #payload = {'name': 'Peter', 'age': 23}
-        payload = {}
+        payload = {'name': 'Peter', 'age': 23}
+        #payload = {}
 
         url = strUrl
         req = http.request('GET', url, fields=payload)
