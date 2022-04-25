@@ -58,8 +58,9 @@ def removeHTMLTags(strHTML):
     return strHTML
 
 def storeHTMLTags(strHTMLTags):
+    print(f"Storing Tag: {strHTMLTag}")
     for strHTMLTag in strHTMLTags.split("<"):
-        print(f"Storing Tag: {strHTMLTag}")
+        print(f"Tag: {strHTMLTag}")
         
 def get_all_seperate_words(url):    
     strHTML= echoHTML(str(url))    
