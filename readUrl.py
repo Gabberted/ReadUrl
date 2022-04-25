@@ -85,7 +85,7 @@ def storeHTMLTags(strHTMLTags):
                 strQ="insert into Tags(Tag)values('" + strHTMLTag + "')"
                 cursor.execute(strQ)
                 print(f"Tag added: {strHTMLTag}")
-                global strHTMLTagList.append(strHTMLTag)
+                strHTMLTagList.append(strHTMLTag)
             else:
                 print(f"Skipping: {strHTMLTag}")
 
