@@ -16,18 +16,23 @@ strVersion = "0.0.5"
 
 #main
 def echoHTML(strUrl):
-    os.system('clear')
-    print("Start System version: " + strVersion)
-    print("init ReadStream")
+    mystr=""
+    try:    
+        os.system('clear')
+        print("Start System version: " + strVersion)
+        print("init ReadStream")
 
-    http = urllib3.PoolManager(ca_certs=certifi.where())
-    #payload = {'name': 'Peter', 'age': 23}
-    payload = {}
+        http = urllib3.PoolManager(ca_certs=certifi.where())
+        #payload = {'name': 'Peter', 'age': 23}
+        payload = {}
 
-    url = strUrl
-    req = http.request('GET', url, fields=payload)
-    print(req.data.decode('utf-8'))
-    mystr = req.data.decode("utf8")
+        url = strUrl
+        req = http.request('GET', url, fields=payload)
+        print(req.data.decode('utf-8'))
+        mystr = req.data.decode("utf8")
+    except as ex:
+        print(f"Error {ex}")
+        pass
     return mystr
 
 
