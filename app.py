@@ -29,9 +29,13 @@ def webopen(url):
 def words(url):
     return rdu.get_all_seperate_words(url)
 
+@app.route('/collectHTMLTags/<url>/<store>')
 @app.route('/collectHTMLTags/<url>')
-def collectHTMLTags(url):
-    return rdu.collectHTMLTags(url)
+def collectHTMLTags(url, store=""):
+    if store!="":
+        return "STORE !"        
+    else:
+        return rdu.collectHTMLTags(url)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=4452)
