@@ -8,6 +8,8 @@ import urllib3
 import certifi
 import argparse
 import json
+import pymssql
+
 
 #var declarations
 strVersion = "1.0.0"
