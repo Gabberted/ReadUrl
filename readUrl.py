@@ -85,8 +85,9 @@ def storeHTMLTags(strHTMLTags):
             strQ="insert into Tags(Tag)values('" + strHTMLTag + "')"
             cursor.execute(strQ)
         except Exception as e:
-            print(f"Cursor execution failed: {e} " )        
-    
+            print(f"Cursor execution failed: {e} " )   
+                 
+    conn.commit()
     cursor.close()
     conn.close()
 

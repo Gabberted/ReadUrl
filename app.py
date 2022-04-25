@@ -32,7 +32,9 @@ def testdb():
     except Exception as e:
         return "Connection failed!"
     
-
+@app.route('/emptyTable/<strTableName>')
+def emptyTable(strTableName):
+    
 
 
 @app.route('/showall/<tablename>')
