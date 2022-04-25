@@ -11,7 +11,7 @@ import argparse
 
 
 #var declarations
-strVersion = "0.0.3"
+strVersion = "0.0.4"
 
 
 #main
@@ -39,6 +39,7 @@ def main():
     parser.add_argument("-words"		, "--get_all_seperate_words"  , help="Gets all the words of the page without HTML tags")
     parser.add_argument("-wordUnique"	, "--get_all_Unique_words"	  , help="Gets all the unique words of the page without HTML tags")
     args = parser.parse_args()
+    url="HTTPS://" + str(args.url)
     if("HTTP" in str(args.url)):
         url=args.url
     else:
