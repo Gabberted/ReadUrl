@@ -15,7 +15,7 @@ import pymssql
 strVersion = "1.0.0"
 strHTMLTags=['\n','<br>','<p>','"','<a','</div>','<strong>','=','text/css','/>']
 strHTMLTags+=['href','<span>','</span>','<div','classlimit','</div','<strong','</input>','</i>','<i>']
-
+strHTMLTagList=[]
 
 #db
 def Connect():
@@ -80,10 +80,15 @@ def storeHTMLTags(strHTMLTags):
     cursor, conn = Connect()
     print(f"Storing Tag: {strHTMLTags}")
     for strHTMLTag in strHTMLTags.split(","):
-        try:
-            print(f"Tag: {strHTMLTag}")
-            strQ="insert into Tags(Tag)values('" + strHTMLTag + "')"
-            cursor.execute(strQ)
+        try:            
+            if strHTMLTag not in strHTMLTagList:
+                strQ="insert into Tags(Tag)values('" + strHTMLTag + "')"
+                cursor.execute(strQ)
+                print(f"Tag added: {strHTMLTag}")
+                global strHTMLTagList.append(strHTMLTag)
+            else:
+                print(f"Skipping: {strHTMLTag}")
+
         except Exception as e:
             print(f"Cursor execution failed: {e} " )   
                  
