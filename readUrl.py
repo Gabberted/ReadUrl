@@ -29,10 +29,14 @@ def echoHTML(strUrl):
         print(f"Payload created {payload}")
         url = strUrl
         print(f"Requering {url}")
-        req = http.request('GET', url, fields=payload)
-        print(f"Get request {req}")
-        print(req.data.decode('utf-8'))
-        mystr = req.data.decode("utf8")
+        try:
+            req = http.request('GET', url, fields=payload)
+            print(f"Get request {req}")
+            print(req.data.decode('utf-8'))
+            mystr = req.data.decode("utf8")
+        except Exception as ex:
+            print(f"Error QUERING URL: {ex}")
+            pass       
     except Exception as ex:
         print(f"Error {ex}")
         pass
