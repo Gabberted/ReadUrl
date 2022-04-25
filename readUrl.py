@@ -44,9 +44,10 @@ def echoHTML(strUrl):
         pass
     return mystr
 
-def webOpen(url):
+def webOpen(url=""):
     http = urllib3.PoolManager()
-    url = 'http://webcode.me'
+    if url="":
+        url = 'http://webcode.me'
     resp = http.request('GET', url)
     print(resp.data.decode('utf-8'))
     return resp.data.decode('utf-8')
@@ -88,6 +89,7 @@ def main():
         print("Not implemented yet")
     if args.get_all_seperate_words:
         print("Not implemented yet")
+        strHTML= echoHTML(str(url))
 
     if args.get_all_Unique_words:
         print("Not fully implemented yet")
