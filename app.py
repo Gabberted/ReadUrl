@@ -34,7 +34,15 @@ def testdb():
     
 @app.route('/emptyTable/<strTableName>')
 def emptyTable(strTableName):
-    
+    try:
+        cursor, conn = rdu.Connect()        
+        strQ="delete from " + strTableName
+        cursor.execute(strQ)
+        conn.commit()
+        return "Table cleared !\n"
+    except Exception as e:
+        return "Connection failed!"
+
 
 
 @app.route('/showall/<tablename>')
