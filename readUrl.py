@@ -77,13 +77,16 @@ def runserver():
     return "Not implemented yet!"
 
 def collectHTMLTags(url):
+    lstTags=[]
     strHTML= echoHTML(str(url))  
     for strItem in strHTML.split("<"):
         for strHTMLTag in strItem.split(">"):
             if(len(strHTMLTag.strip())>0):    
-                strHTMLTag = "<" + strHTMLTag  + ">"            
-                print(f"TAG: {strHTMLTag}")
+                strHTMLTag = "<" + strHTMLTag  + ">"                            
+                if strHTMLTag not in lstTags:
+                    lstTags.append(strHTMLTag)
 
+    return json.dumps(lstTags)
 
   
 def main():
