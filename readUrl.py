@@ -60,6 +60,8 @@ def get_all_seperate_words(url):
     strHTML= echoHTML(str(url))
     strHTML=removeHTMLTags(url)
     strHTMLsplit=strHTML.split()
+    iLen=len(strHTMLsplit)
+    print(f"The lenght of strHTMLsplit: {iLen}")
     for strItem in strHTMLsplit:
         print(f"item: {strItem}")
     
