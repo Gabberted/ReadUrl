@@ -39,15 +39,16 @@ def main():
     parser.add_argument("-words"		, "--get_all_seperate_words"  , help="Gets all the words of the page without HTML tags")
     parser.add_argument("-wordUnique"	, "--get_all_Unique_words"	  , help="Gets all the unique words of the page without HTML tags")
     args = parser.parse_args()
+    if("HTTP" in str(args.url)):
+           url=args.url
+       else:
+           url="HTTPS://" + str(args.url)
     if args.verbosity:
         print("verbosity turned on")
         boVerbose=True
     if args.url:
         url=""
-        if("HTTP" in str(args.url)):
-            url=args.url
-        else:
-            url="HTTPS://" + str(args.url)
+       
         return echoHTML(str(url))
     if args.beautyfy:
         print("Not implemented yet")
