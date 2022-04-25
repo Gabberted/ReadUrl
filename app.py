@@ -3,6 +3,7 @@
 from flask import Flask
 from flask import request
 import readUrl as rdu
+import json
 
 print("Starting")
 app = Flask(__name__)
@@ -43,7 +44,7 @@ def showall(tablename):
         rows = cursor.fetchall()
         for row in rows:
             print(row)
-        return "Not fully implemented"
+        return json.dumps(rows)
     else:
         return "Please provide a tablename"
 
