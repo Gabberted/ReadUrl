@@ -26,7 +26,7 @@ def webopen(url):
     return rdu.webOpen(url)
 
 @app.route('/words/<url>')
-def webopen(url):
+def words(url):
     return rdu.get_all_seperate_words(url)
 
 if __name__ == '__main__':
