@@ -7,7 +7,7 @@ import os
 import urllib3
 import certifi
 import argparse
-from . import app as app
+import app as app
 
 
 
