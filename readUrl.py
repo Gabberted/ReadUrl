@@ -80,7 +80,8 @@ def collectHTMLTags(url):
     strHTML= echoHTML(str(url))  
     for strItem in strHTML.split("<"):
         for strHTMLTag in strItem.split(">"):
-            print(f"TAG: {strHTMLTag}")
+            if(len(strHTMLTag)>0:                
+                print(f"TAG: {strHTMLTag}")
 
 
   
