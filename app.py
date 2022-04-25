@@ -32,8 +32,14 @@ def testdb():
 
 
 @app.route('/showall/<tablename>')
-def showall():
-    return "Not implemented"
+def showall(tablename):
+    strQ="Select * from " + tablename 
+    cursor, conn =rdu.Collect()
+    cursor.execute(strQ)
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row)
+    return "Not fully implemented"
 
 
 @app.route('/webopen/<url>')
