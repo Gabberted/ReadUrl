@@ -64,7 +64,7 @@ def Connect():
         print("Connection failed!")
         print(e)
         print("Leaving")
-    dbg.setDebugLevel(0)
+    #dbg.setDebugLevel(0)
     return cursor, conn
 
 #main
