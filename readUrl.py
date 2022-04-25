@@ -78,10 +78,11 @@ def removeHTMLTags(strHTML):
 
 def storeHTMLTags(strHTMLTags):
     cursor, conn = Connect()
-    print(f"Storing Tag: {strHTMLTags}")
+    print(f"Storing Tag: {strHTMLTags}")   
+    strHTMLTags= strHTMLTags.replace("&Quot;","")
     for strHTMLTag in strHTMLTags.split(","):
         try:            
-            if strHTMLTag not in strHTMLTagList:
+            if strHTMLTag not in strHTMLTagList:                
                 strQ="insert into Tags(Tag)values('" + strHTMLTag + "')"
                 cursor.execute(strQ)
                 print(f"Tag added: {strHTMLTag}")
