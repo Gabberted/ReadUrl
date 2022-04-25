@@ -65,10 +65,8 @@ def Connect():
     #     code, message = error.args
     #     print(">>>>>>>>>>>>>", code, message)
     except Exception as e:
-        print("Connection failed!")
-        print(e)
-        print("Leaving")
-    #dbg.setDebugLevel(0)
+        print(f"Connection failed: {e} " )        
+        print("Leaving")    
     return cursor, conn
 
 #main
