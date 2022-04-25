@@ -28,7 +28,9 @@ def echoHTML(strUrl):
         #payload = {}
         print(f"Payload created {payload}")
         url = strUrl
+        print(f"Requering {url}")
         req = http.request('GET', url, fields=payload)
+        print(f"Get request {req}")
         print(req.data.decode('utf-8'))
         mystr = req.data.decode("utf8")
     except Exception as ex:
