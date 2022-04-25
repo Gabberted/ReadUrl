@@ -2,7 +2,8 @@
 
 from flask import Flask
 from flask import request
-from . import readUrl as rdu
+import readUrl as rdu
+
 print("Starting")
 app = Flask(__name__)
 print(f"app {app}")
