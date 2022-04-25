@@ -33,6 +33,7 @@ def words(url):
 @app.route('/collectHTMLTags/<url>')
 def collectHTMLTags(url, store=""):
     if store!="":
+        strTags = rdu.collectHTMLTags(url)
         return "STORE !"        
     else:
         return rdu.collectHTMLTags(url)
