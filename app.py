@@ -22,7 +22,7 @@ def hello_world():
 
 @app.route('/testdb')
 def testdb():
-    print(rdu.connect())
+    print(rdu.Connect())
 
 
 
