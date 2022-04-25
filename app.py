@@ -33,13 +33,16 @@ def testdb():
 
 @app.route('/showall/<tablename>')
 def showall(tablename):
-    strQ="Select * from " + tablename 
-    cursor, conn =rdu.Collect()
-    cursor.execute(strQ)
-    rows = cursor.fetchall()
-    for row in rows:
-        print(row)
-    return "Not fully implemented"
+    if len(tablename)>0:
+        strQ="Select * from " + tablename 
+        cursor, conn =rdu.Collect()
+        cursor.execute(strQ)
+        rows = cursor.fetchall()
+        for row in rows:
+            print(row)
+        return "Not fully implemented"
+    else:
+        return "Please provide a tablename"
 
 
 @app.route('/webopen/<url>')
