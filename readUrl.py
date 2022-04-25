@@ -78,8 +78,8 @@ def runserver():
 
 def collectHTMLTags(url):
     strHTML= echoHTML(str(url))  
-    foreach strItem in strHTML.split("<"):
-        foreach strHTMLTag in strItem.split(">"):
+    for strItem in strHTML.split("<"):
+        for strHTMLTag in strItem.split(">"):
             print(f"TAG: {strHTMLTag[0]}")
 
 
