@@ -16,6 +16,7 @@ strVersion = "1.0.0"
 strHTMLTags=['\n','<br>','<p>','"','<a','</div>','<strong>','=','text/css','/>']
 strHTMLTags+=['href','<span>','</span>','<div','classlimit','</div','<strong','</input>','</i>','<i>']
 
+
 #db
 def Connect():
     try:     
@@ -79,9 +80,12 @@ def storeHTMLTags(strHTMLTags):
     cursor, conn = Connect()
     print(f"Storing Tag: {strHTMLTags}")
     for strHTMLTag in strHTMLTags.split(","):
-        print(f"Tag: {strHTMLTag}")
-        strQ="insert into HTML_Tags(Tag)values('" + strHTMLTag + "')"
-        cursor.execute(strQ)
+        try
+            print(f"Tag: {strHTMLTag}")
+            strQ="insert into Tags(Tag)values('" + strHTMLTag + "')"
+            cursor.execute(strQ)
+        except Exception as e:
+            print(f"Cursor execution failed: {e} " )        
     
     cursor.close()
     conn.close()
