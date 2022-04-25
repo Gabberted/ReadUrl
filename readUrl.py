@@ -11,7 +11,7 @@ import json
 
 #var declarations
 strVersion = "1.0.0"
-strHTMLTags=['\n','<br>']
+strHTMLTags=['\n','<br>','<p>','"','<a']
 
 #main
 def echoHTML(strUrl):
