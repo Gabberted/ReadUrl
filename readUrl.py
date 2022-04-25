@@ -114,9 +114,16 @@ def removeHTMLTags(strHTML):
     return strHTML
 
 def storeHTMLTags(strHTMLTags):
+    cursor, conn =rdu.Connect()
     print(f"Storing Tag: {strHTMLTags}")
     for strHTMLTag in strHTMLTags.split(","):
         print(f"Tag: {strHTMLTag}")
+        strQ="insert into HTML_Tags(Tag)values('" + strHTMLTag + "')"
+        cursor.execute(strQ)
+    
+    cursor.close()
+    conn.close()
+
         
 def get_all_seperate_words(url):    
     strHTML= echoHTML(str(url))    
