@@ -52,7 +52,7 @@ def Connect():
         #conn = pymssql.connect(host='192.168.2.1\slims', user='SLIMS_APPUSR', password='xTzz488slims', database='def', port=1433)
         #conn = pymssql.connect(host='192.168.2.1\slims', user='SLIMS_APPUSR', password='xTzz488slims', database='SLIMS', port=1433)
         #conn = pymssql.connect(host='185.41.126.25', user='50747_rakaut', password='t\H7mF|i:7', database='50747_BackSystem', port=9146)
-        conn = pymssql.connect(host='192.168.10.102', user='Autar3External', password='ijQ84mTO@85400', database='Autar3main', port=9146)
+        conn = pymssql.connect(host='185.41.126.25', user='Autar3External', password='ijQ84mTO@85400', database='Autar3main', port=9146)
         print("connection made: Connected")
         cursor=conn.cursor()
         print("db cursor: fetched " + str(cursor))
