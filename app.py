@@ -2,8 +2,7 @@
 
 from flask import Flask
 from flask import request
-
-
+from . import readUrl as rdu
 print("Starting")
 app = Flask(__name__)
 print(f"app {app}")
@@ -19,6 +18,13 @@ def hello():
 @app.route('/')
 def hello_world():
     return "Hello World"
+
+
+@app.route('/webopen')
+def hello_world():
+    return rdu.webOpen("")
+
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=4452)
