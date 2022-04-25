@@ -54,7 +54,7 @@ def webOpen(url=""):
 def get_all_seperate_words(url):
 
     strHTML= echoHTML(str(url))
-    strHTMLsplit=strHTML.split(" ")
+    strHTMLsplit=strHTML.split([" ","\n"])
     for strItem in strHTMLsplit:
         print(f"item: {strItem}")
     
