@@ -7,12 +7,10 @@ import os
 import urllib3
 import certifi
 import argparse
-#import app as app
-
-
+import json
 
 #var declarations
-strVersion = "0.0.8"
+strVersion = "1.0.0"
 
 
 #main
@@ -54,11 +52,16 @@ def webOpen(url=""):
     return resp.data.decode('utf-8')
 
 def get_all_seperate_words(url):
+
     strHTML= echoHTML(str(url))
     strHTMLsplit=strHTML.split(" ")
     for strItem in strHTMLsplit:
         print(f"item: {strItem}")
-    return str(strHTMLsplit)
+    
+    return json.dumps(strHTMLsplit)
+
+    #return str(strHTMLsplit)
+
 
 def runserver():
     return "Not implemented yet!"
