@@ -23,8 +23,10 @@ def hello_world():
 @app.route('/testdb')
 def testdb():
     try:
-        cursor, conn = rdu.Connect()
-        return "Database Connected !\n"
+        cursor, conn = rdu.Connect()        
+        strQ="insert into HTML_Tags(Tag)values('" + strHTMLTag + "')"
+        cursor.execute(strQ)
+        return "Data stored !\n"
     except Exception as e:
         return "Connection failed!"
     
