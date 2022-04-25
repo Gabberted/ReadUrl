@@ -53,6 +53,12 @@ def webOpen(url=""):
     print(resp.data.decode('utf-8'))
     return resp.data.decode('utf-8')
 
+def get_all_seperate_words(url):
+    strHTML= echoHTML(str(url))
+    strHTMLsplit=strHTML.split(" ")
+    for strItem in strHTMLsplit:
+        print(f"item: {strItem}")
+    return strHTMLsplit
 
 def runserver():
     return "Not implemented yet!"
@@ -90,7 +96,8 @@ def main():
         print("Not implemented yet")
     if args.get_all_seperate_words:
         print("Not implemented yet")
-        strHTML= echoHTML(str(url))
+        strHTML= get_all_seperate_words(url)
+       
 
     if args.get_all_Unique_words:
         print("Not fully implemented yet")
