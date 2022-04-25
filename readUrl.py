@@ -11,7 +11,7 @@ import argparse
 
 
 #var declarations
-strVersion = "0.0.5"
+strVersion = "0.0.6"
 
 
 #main
@@ -35,6 +35,22 @@ def echoHTML(strUrl):
         pass
     return mystr
 
+def webOpen(url):
+    from selenium import webdriver
+    host = 'selenium'
+    port = '4444'
+    url = host + ':' + port + '/wd/hub'
+
+    desired_capabilities = {
+        'browserName': 'firefox',
+        'javascriptEnabled': True,
+    }
+
+    driver = webdriver.Remote(command_executor = url, desired_capabilities =
+                                                            desired_capabilities)
+    print('Success')
+    driver.quit()
+
 
 def main():
     boVerbose=False
@@ -45,12 +61,15 @@ def main():
     parser.add_argument("-b"			, "--beautyfy"			      , help="Uses beautifull-soup to clear up the HTML")
     parser.add_argument("-words"		, "--get_all_seperate_words"  , help="Gets all the words of the page without HTML tags")
     parser.add_argument("-wordUnique"	, "--get_all_Unique_words"	  , help="Gets all the unique words of the page without HTML tags")
+    parser.add_argument("-test      "	, "--test"	  , help="Run test")
     args = parser.parse_args()
     url="HTTPS://" + str(args.url)
     if("HTTP" in str(args.url)):
         url=args.url
     else:
         url="HTTPS://" + str(args.url)
+    if args.test:
+        webOpen("www.nu.nl")        
     if args.verbosity:
         print("verbosity turned on")
         boVerbose=True
