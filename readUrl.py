@@ -11,7 +11,7 @@ import argparse
 
 
 #var declarations
-strVersion = "0.0.2"
+strVersion = "0.0.3"
 
 
 #main
@@ -20,21 +20,17 @@ def echoHTML(strUrl):
     print("Start System version: " + strVersion)
     print("init ReadStream")
 
-    #fp = urllib.request.urlopen("http://www.python.org")
-    #fp = urllib.request.urlopen(strUrl)
-    #mybytes = fp.read()
     http = urllib3.PoolManager(ca_certs=certifi.where())
     payload = {'name': 'Peter', 'age': 23}
     url = strUrl
     req = http.request('GET', url, fields=payload)
     print(req.data.decode('utf-8'))
     mystr = req.data.decode("utf8")
-    #fp.close()
-    #print(mystr)
     return mystr
 
 
 def main():
+    boVerbose=False
     parser = argparse.ArgumentParser()
     parser.add_argument("--verbosity", help="increase output verbosity")
     #parser.add_argument("-?", help="get the HTML content of the url provided: readUrl -url (url)")
@@ -45,13 +41,13 @@ def main():
     args = parser.parse_args()
     if args.verbosity:
         print("verbosity turned on")
+        boVerbose=True
     if args.url:
         url=""
         if("HTTP" in str(args.url)):
             url=args.url
         else:
             url="HTTPS://" + str(args.url)
-
         return echoHTML(str(url))
     if args.beautyfy:
         print("Not implemented yet")
@@ -59,7 +55,11 @@ def main():
         print("Not implemented yet")
 
     if args.get_all_Unique_words:
-        print("Not implemented yet")
+        print("Not fully implemented yet")
+        strHTML= echoHTML(str(url))
+        strHTMLSPL=strHTML.split(' ')
+        for strItem in strHTMLSPL:
+            print(strItem)
 
     print("Done")
 
