@@ -11,7 +11,7 @@ import argparse
 
 
 #var declarations
-strVersion = "0.0.4"
+strVersion = "0.0.5"
 
 
 #main
