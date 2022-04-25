@@ -14,6 +14,59 @@ strVersion = "1.0.0"
 strHTMLTags=['\n','<br>','<p>','"','<a','</div>','<strong>','=','text/css','/>']
 strHTMLTags+=['href','<span>','</span>','<div','classlimit','</div','<strong','</input>','</i>','<i>']
 
+#db
+def Connect():
+    try:
+        #dbg.setDebugLevel(0)
+        print("Entering Connect")
+        print("Trying to connect")
+        #connection = pyodbc.connect('Driver={SQL Server};Server=DESKTOP-SFABI2H\SQLEXPRESS1;Database=SLIMS;Trusted_Connection=yes;')
+        #connection = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};Server=tcp:DESKTOP-SFABI2H\SQLEXPRESS1;Database=SLIMS;UID=SLIMS_APPUSR;PWD=xTzz488slims')
+        #try:
+        #    conn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};Server=tcp:192.168.178.42\SQLEXPRESS1;Database=SLIMS;UID=SLIMS_APPUSR;PWD=xTzz488slims')
+        #except Exception as e:
+        #    dbg.debugprint(str(e))
+        #  db = pymysql.connect("mysql8.mijnhostingpartner.nl","Autar3Joomla","asdf1234","Autar3newj" )
+
+        #conn = pymssql.connect(host='84.246.4.143:9139', user='Autar3external', password='ijQ84mTO@85400', database='autar3filelog')
+        #dbg.setDebugLevel(0)
+        #conn = pymssql.connect(host='185.41.125.20', user='Autar3external', password='ijQ84mTO@85400', database='autar3filelog', port=9108)
+        #conn = pymssql.connect(host='192.168.2.1/slims', user='SLIMS_APPUSR', password='xTzz488slims', database='slims', port=1433)
+        #conn = mysql.connector.connect(host="127.0.0.1",user="root",password="ijQ84mTO@85400", port=3306)
+        #conn = pymssql.connect(host='127.0.0.1', user='slims', password='ijQ84mTO@85400', database='slims', port=3306)
+        #conn = mysql.connector.connect(host="database-2.chsg3bafu3rp.us-east-2.rds.amazonaws.com",user="admin",password="ijQ84mTO#85400", port=3306)
+        #conn = mysql.connector.connect(host="sql211.unaux.com",user="unaux_27270618",password="#59ceFij4VkyaaE6hKO$", database="unaux_27270618_slims", port=3306)
+        #conn = mysql.connector.connect(host="192.168.178.62",user="root",password="ijQ84mTO", database="unaux_27270618_slims", port=3306)
+
+        #conn = mysql.connector.connect(host="gabberted.unaux.com",user="unaux_27270618",password="#59ceFij4VkyaaE6hKO$", database="unaux_27270618_slims", port=3306)
+        conn = mysql.connector.connect(host='185.41.126.25', user='50747_rakaut', password='t\H7mF|i:7', database='50747_BackSystem', port=9146)
+        #conn = mysql.connector.connect(host='localhost', user='slims', password='ijQ84mTO@85400', database='slims', port=3306)
+        #conn.autocommit(True)
+        #conn = mysql.connector.connect(host='localhost',database='slims',user='slims',password='ijQ84mTO@85400')
+        #conn = sqlite3.connect('data/mydb')
+        #conn== sqlite3.connect(db)
+
+        #conn = pymssql.connect(host='192.168.2.1\slims', user='SLIMS_APPUSR', password='xTzz488slims', database='deflopment', port=1433)
+        #conn = pymssql.connect(host='192.168.2.1\slims', user='SLIMS_APPUSR', password='xTzz488slims', database='def', port=1433)
+        #conn = pymssql.connect(host='192.168.2.1\slims', user='SLIMS_APPUSR', password='xTzz488slims', database='SLIMS', port=1433)
+        print("connection made: Connected")
+        cursor=conn.cursor()
+        print("db cursor: fetched " + str(cursor))
+        #dbg.setDebugLevel(0)
+
+    # except mysql.connector.Error as err:
+    #     print("Something went wrong: {}".format(err))
+    except pymssql.InternalError as error:
+        print("Error:" + str(error.args))
+        code, message = error.args
+        print(">>>>>>>>>>>>>", code, message)
+    except Exception as e:
+        print("Connection failed!")
+        print(e)
+        print("Leaving")
+    dbg.setDebugLevel(0)
+    return cursor, conn
+
 #main
 def echoHTML(strUrl):
     url = strUrl
