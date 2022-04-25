@@ -30,7 +30,7 @@ def echoHTML(strUrl):
         req = http.request('GET', url, fields=payload)
         print(req.data.decode('utf-8'))
         mystr = req.data.decode("utf8")
-    except as ex:
+    except Exception as ex:
         print(f"Error {ex}")
         pass
     return mystr
