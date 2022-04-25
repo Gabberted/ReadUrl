@@ -25,7 +25,7 @@ def testdb():
     try:
         cursor, conn = rdu.Connect()
         return "Database Connected !\n"
-     except Exception as e:
+    except Exception as e:
         return "Connection failed!"
     
 
