@@ -7,6 +7,7 @@ import os
 import urllib3
 import certifi
 import argparse
+from . import app as app
 
 
 
@@ -49,6 +50,9 @@ def webOpen(url):
     resp = http.request('GET', url)
     print(resp.data.decode('utf-8'))
 
+def runserver():
+    myApp = new app()
+  
 def main():
     boVerbose=False
     parser = argparse.ArgumentParser()
@@ -58,6 +62,7 @@ def main():
     parser.add_argument("-b"			, "--beautyfy"			      , help="Uses beautifull-soup to clear up the HTML")
     parser.add_argument("-words"		, "--get_all_seperate_words"  , help="Gets all the words of the page without HTML tags")
     parser.add_argument("-wordUnique"	, "--get_all_Unique_words"	  , help="Gets all the unique words of the page without HTML tags")
+    parser.add_argument("--runserver"	, help="Run the server on host port 4452")
     parser.add_argument("-test      "	, "--test"	  , help="Run test")
     args = parser.parse_args()
     url="HTTPS://" + str(args.url)
@@ -65,6 +70,9 @@ def main():
         url=args.url
     else:
         url="HTTPS://" + str(args.url)
+
+    if args.runserver:
+        runserver()        
     if args.test:
         webOpen("www.nu.nl")        
     if args.verbosity:

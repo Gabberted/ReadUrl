@@ -15,3 +15,10 @@ def hello():
     ka = request.headers.get('connection')
     print(f"returning {ua}   {ka}")
     return f'User agent: {ua}; Connection: {ka}'
+
+@app.route('/')
+def hello_world():
+    return 'Hello World’
+
+if __name__ == '__main__':
+    app.run()
