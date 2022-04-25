@@ -58,7 +58,7 @@ def get_all_seperate_words(url):
     strHTMLsplit=strHTML.split(" ")
     for strItem in strHTMLsplit:
         print(f"item: {strItem}")
-    return strHTMLsplit
+    return str(strHTMLsplit)
 
 def runserver():
     return "Not implemented yet!"
